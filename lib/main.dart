@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_repo/floor/post_response_dao.dart';
+import 'package:git_repo/view/login_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'floor/app_database.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.pink,
       ),
-      home: PostScreen(),
+      home: LoginScreen(),
     );
   }
 }
