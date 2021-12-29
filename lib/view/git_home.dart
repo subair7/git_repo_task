@@ -54,16 +54,20 @@ class _PostScreenState extends State<PostScreen> with WidgetsBindingObserver {
     //   final newPage = await _post.fetchPost(context, pageKey);
     try {
       final newItems = await _post.fetchPost(context, pageKey);
-      final isLastPage = newItems.length < 8;
+      final isLastPage = newItems.length < 15;
       if (isLastPage) {
         _pagingController.appendLastPage(newItems);
       } else {
-        final nextPageKey = pageKey + newItems.length;
-        _pagingController.appendPage(newItems, nextPageKey.toInt());
+        pageKey = pageKey + 1;
+        // final nextPageKey = pageKey + 15;
+
+
+        _pagingController.appendPage(newItems, pageKey.toInt());
       }
     } catch (error) {
       _pagingController.error = error;
     }
+    // pageKey++;
   }
 
   Widget _title(BuildContext context) {

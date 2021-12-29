@@ -12,7 +12,7 @@ PostResponseDao? dao;
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final database =
-  await $FloorAppDatabase.databaseBuilder('flutter_interview_db.db').build();
+  await $FloorAppDatabase.databaseBuilder('interview_db.db').build();
   dao = database.postResponseDao;
 
   runApp(
@@ -48,7 +48,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.pink,
       ),
-      home: LoginScreen(),
+      home:
+      // PostScreen()
+      LoginScreen(),
     );
   }
 }

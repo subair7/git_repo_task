@@ -37,6 +37,7 @@ class ApiHandler {
   ) async {
     try {
       List<PostResponse> myModels;
+      // print("https://api.github.com/users/JakeWharton/repos?page=$pageKey&per_page=10");
       var res = await http.get(Uri.parse("https://api.github.com/users/JakeWharton/repos?page=$pageKey&per_page=15"));
       myModels=(json.decode(res.body) as List).map((i) =>
           PostResponse.fromJson(i)).toList();
